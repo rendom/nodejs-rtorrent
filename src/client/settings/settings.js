@@ -1,7 +1,7 @@
 var log = require('../log/log');
 
 module.exports = angular
-	.module('feeds.edit', [
+	.module('settings', [
 		'ui.router',
 		log.name,
 	])
