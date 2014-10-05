@@ -5,6 +5,13 @@ var rtorrent = require("../lib/rtorrent");
 
 var settings = module.exports = {};
 
+settings.getAll = function(){
+	return {
+		"globalMaximumUploadRate": rtorrent.getGlobalMaximumUploadRate(),
+		"getGlobalMaximumDownloadRate": rtorrent.getGlobalMaximumDownloadRate()
+	}
+};
+
 var listeningPort = settings.listeningPort = {};
 
 var bandwidthLimiting = settings.bandwidthLimiting = {};

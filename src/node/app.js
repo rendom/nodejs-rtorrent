@@ -85,6 +85,7 @@ require("./controllers/login")(app);
 require("./controllers/feeds")(app);
 require("./controllers/torrent")(app);
 require("./controllers/rss-subscriptions")();
+require("./controllers/settings")(app);
 
 logger.info("Listening on hostname and port: %s:%s", nconf.get("app:hostname"), nconf.get("app:port"));
 
