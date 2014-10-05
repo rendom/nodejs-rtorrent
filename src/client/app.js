@@ -24,6 +24,7 @@ var feed = require('./feed/feed');
 var feedsAdd = require('./feeds.add/feeds.add');
 var feedsEdit = require('./feeds.edit/feeds.edit');
 var feedsDelete = require('./feeds.delete/feeds.delete');
+var settings = require('./settings/settings');
 
 angular.module('app', [
 	'ui.bootstrap',
@@ -45,7 +46,8 @@ angular.module('app', [
 	feed.name,
 	feedsAdd.name,
 	feedsEdit.name,
-	feedsDelete.name
+	feedsDelete.name,
+	settings.name
 ]).config(function($urlRouterProvider, $stickyStateProvider) {
 	$stickyStateProvider.enableDebug(true);
 	$urlRouterProvider.otherwise('/');

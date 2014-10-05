@@ -6,6 +6,10 @@ var nconf = require("nconf");
 var net = require('net');
 var Deserializer = require('./rtorrent/deserializer');
 
+nconf.argv()
+.env()
+.file({ file: '/home/ingrid/gitstuff/nrtorrent/src/node/config/config.json' });
+
 function htmlspecialchars(str) {
 	return str.replace(/\&/ig,"&amp;").replace(/\"/ig,"&quot;").replace(/\'/ig,"&#039;").replace(/\</ig,"&lt;").replace(/\>/ig,"&gt;");
 }
@@ -418,3 +422,12 @@ rtorrent.getGlobalMaximumUploadRate = function() {
 rtorrent.setGlobalMaximumUploadRate = function(value) {
 	return methodCall('set_upload_rate', [value]);
 }
+
+
+/*
+ * stuff 
+ */
+function o(fo){
+	console.log( JSON.stringify(fo, null, 2) );
+}
+o(methodCall('get_max_uploads', []));
